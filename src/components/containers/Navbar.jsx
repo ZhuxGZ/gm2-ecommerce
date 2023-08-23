@@ -4,8 +4,8 @@ export default function Navbar() {
 			<div className="user">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="25"
+					width="30"
+					height="30"
 					viewBox="0 0 24 25"
 					fill="none"
 				>
@@ -20,8 +20,8 @@ export default function Navbar() {
 			<div className="cart">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="25"
+					width="30"
+					height="30"
 					viewBox="0 0 24 25"
 					fill="none"
 				>
