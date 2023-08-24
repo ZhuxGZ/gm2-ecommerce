@@ -10,6 +10,7 @@
 
 header {
 	display: flex;
+	margin-bottom: 4em;
 }
 
 nav {
@@ -27,4 +28,19 @@ nav {
 	position: relative;
 	left: -10px;
 	top: -22px;
+}
+
+.row {
+	display: grid;
+	place-content: center;
+	gap: 1.5em;
+}
+
+@media screen and (max-width: 1200px) {
+	.row-md {
+		grid-template-columns: repeat(4, max-content);
+	}
+	.row-lg {
+		grid-template-columns: repeat(2, 45%);
+	}
 }
