@@ -60,11 +60,15 @@ nav {
 }
 
 .listPrice {
+	color: #909090;
 	align-self: center;
 	justify-self: end;
 	margin: 0;
+	text-decoration: line-through;
 }
 .price {
+	color: #941b0c;
+	font-weight: bold;
 	text-align: end;
 	font-size: 24px;
 	margin: 0;

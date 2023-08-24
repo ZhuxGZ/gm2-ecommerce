@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 export function NewsCard() {
 	return (
 		<div className="product">
@@ -92,10 +93,10 @@ export function NewsCard() {
 						<span className="numReviews">199</span>
 					</div>
 					<p className="id">25</p>
-					<p className="listPrice">9999</p>
+					<p className="listPrice">$9999</p>
 				</div>
 			</div>
-			<p className="price">6900</p>
+			<p className="price">$6900</p>
 			<div className="btn">
 				<button>
 					<svg
