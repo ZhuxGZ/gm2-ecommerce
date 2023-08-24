@@ -1,8 +1,8 @@
-export default function Row({ title, size, children }) {
+export default function Row({ title, col, children }) {
 	return (
 		<section>
 			<h2 className="title">{title}</h2>
-			<div className={`row ${size}`}>{children}</div>
+			<div className={`col col-${col}`}>{children}</div>
 		</section>
 	);
 }
