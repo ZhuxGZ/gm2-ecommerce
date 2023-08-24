@@ -18,7 +18,13 @@ nav {
 	margin-left: auto;
 }
 
-nav svg {
-	height: 2em;
-	height: 2em;
+.badge {
+	font-size: 12px;
+	background: black;
+	color: #c84800;
+	border-radius: 50%;
+	padding: 0.3em;
+	position: relative;
+	left: -10px;
+	top: -22px;
 }

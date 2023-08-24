@@ -30,6 +30,7 @@ export default function Navbar() {
 						fill="white"
 					/>
 				</svg>
+				<span className="badge">5</span>
 			</div>
 		</nav>
 	);
