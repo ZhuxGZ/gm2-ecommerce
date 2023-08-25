@@ -1,12 +1,13 @@
 import Row from './components/containers/Row';
 import Layout from './components/layouts/layout';
-import { NewsCard } from './components/containers/Cards';
+import { NewsCard, ProdCard } from './components/containers/Cards';
 
 function App() {
 	return (
 		<Layout>
-			<Row cols="4" title="Productos Destacados">
+			<Row col="4" title="Productos Destacados">
 				<NewsCard />
+				<ProdCard />
 			</Row>
 		</Layout>
 	);

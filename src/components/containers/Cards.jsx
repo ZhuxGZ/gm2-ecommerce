@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-export function NewsCard() {
+export const NewsCard = () => {
 	return (
-		<div className="product">
+		<div className="news">
 			<div className="prodInfo">
 				<img
 					src="https://cdn.motor1.com/images/mgl/RqgR3K/s1/mazda-cx-60-2022.jpg"
@@ -182,4 +182,103 @@ export function NewsCard() {
 			</div>
 		</div>
 	);
-}
+};
+
+export const ProdCard = () => {
+	return (
+		<div className="product">
+			<div className="productInfo">
+				<div className="info">
+					<img
+						src="https://cdn.motor1.com/images/mgl/RqgR3K/s1/mazda-cx-60-2022.jpg"
+						alt=""
+					></img>
+					<h3>Lorem ipsum dolor sit amte consecutor</h3>
+					<p className="id"> 25</p>
+				</div>
+			</div>
+			<div className="bottom">
+				<button className="addToCart">
+					<svg
+						width="24"
+						height="26"
+						viewBox="0 0 24 26"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<g clip-path="url(#clip0_215_332)">
+							<path
+								d="M5.6857 1.63828L2.42856 5.97621V21.159C2.42856 21.7342 2.65733 22.2859 3.06455 22.6927C3.47178 23.0995 4.02409 23.328 4.59999 23.328H19.8C20.3759 23.328 20.9282 23.0995 21.3354 22.6927C21.7426 22.2859 21.9714 21.7342 21.9714 21.159V5.97621L18.7143 1.63828H5.6857Z"
+								stroke="white"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M2.42856 5.97623H21.9714"
+								stroke="white"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M16.5428 10.3141C16.5428 11.4646 16.0853 12.568 15.2708 13.3815C14.4564 14.195 13.3518 14.6521 12.2 14.6521C11.0482 14.6521 9.94355 14.195 9.12911 13.3815C8.31467 12.568 7.85712 11.4646 7.85712 10.3141"
+								stroke="white"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</g>
+						<defs>
+							<clipPath id="clip0_215_332">
+								<rect
+									width="22.8"
+									height="25.2143"
+									fill="white"
+									transform="translate(0.799988 0.0115356)"
+								/>
+							</clipPath>
+						</defs>
+					</svg>
+					<svg
+						width="12"
+						height="11"
+						viewBox="0 0 12 11"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<g clip-path="url(#clip0_215_336)">
+							<path
+								d="M5.74286 1.68747V9.27887"
+								stroke="white"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M1.94284 5.48312H9.54284"
+								stroke="white"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</g>
+						<defs>
+							<clipPath id="clip0_215_336">
+								<rect
+									width="11.4"
+									height="10.5737"
+									fill="white"
+									transform="translate(0.0428467 0.331787)"
+								/>
+							</clipPath>
+						</defs>
+					</svg>
+				</button>
+				<div className="prodPrice">
+					<p>9000</p>
+				</div>
+			</div>
+		</div>
+	);
+};
