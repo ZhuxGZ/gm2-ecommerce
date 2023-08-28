@@ -6,7 +6,7 @@ function App() {
 	return (
 		<Layout>
 			<Row col="4" title="Productos Destacados">
-				<ProdCard />
+				<ProdCard isDiscount="true" />
 				<ProdCard />
 				<ProdCard />
 				<ProdCard />

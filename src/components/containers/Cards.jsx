@@ -184,10 +184,10 @@ export const NewsCard = () => {
 	);
 };
 
-export const ProdCard = () => {
+export const ProdCard = ({ isDiscount }) => {
 	return (
-		<div className="product">
-			<div className="productInfo">
+		<div className="product ">
+			<div className={`productInfo ${isDiscount && 'discount'}`}>
 				<div className="info">
 					<img
 						src="https://cdn.motor1.com/images/mgl/RqgR3K/s1/mazda-cx-60-2022.jpg"
@@ -198,7 +198,7 @@ export const ProdCard = () => {
 				</div>
 			</div>
 			<div className="bottom">
-				<button className="addToCart">
+				<button className={`addToCart ${isDiscount && 'discount'}`}>
 					<svg
 						width="24"
 						height="26"
@@ -275,8 +275,8 @@ export const ProdCard = () => {
 						</defs>
 					</svg>
 				</button>
-				<div className="prodPrice">
-					<p className="listPrice">15000</p>
+				<div className={`prodPrice ${isDiscount && 'discount'}`}>
+					{isDiscount && <p className="listPrice">15000</p>}
 					<p className="price">9000</p>
 				</div>
 			</div>
