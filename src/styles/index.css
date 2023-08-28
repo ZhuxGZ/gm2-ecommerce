@@ -132,6 +132,7 @@ nav {
 }
 
 .productInfo {
+	position: relative;
 	background-color: var(--card-bg);
 	display: grid;
 	justify-content: center;
@@ -140,6 +141,22 @@ nav {
 	height: 22em;
 	border-radius: 15px 15px 0 15px;
 	font-size: large;
+}
+
+.productInfo svg {
+	display: none;
+}
+
+.forSale {
+	position: absolute;
+	display: block !important;
+	top: 0;
+	right: -15px;
+}
+.forSaleText {
+	fill: white;
+	font-size: larger;
+	font-weight: bold;
 }
 
 .productInfo img {
