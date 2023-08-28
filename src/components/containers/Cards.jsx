@@ -276,7 +276,8 @@ export const ProdCard = () => {
 					</svg>
 				</button>
 				<div className="prodPrice">
-					<p>9000</p>
+					<p className="listPrice">15000</p>
+					<p className="price">9000</p>
 				</div>
 			</div>
 		</div>
