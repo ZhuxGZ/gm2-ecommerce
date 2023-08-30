@@ -9,6 +9,11 @@
 	--card-bg: white;
 }
 
+main {
+	display: grid;
+	gap: 3em;
+}
+
 .discount {
 	--card-bg: #cfcf06;
 }
