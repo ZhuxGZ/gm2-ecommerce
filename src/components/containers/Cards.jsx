@@ -1,5 +1,12 @@
 /* eslint-disable react/no-unknown-property */
-export const NewsCard = () => {
+export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
+	let inDiscount = false;
+	const discountPrice = price - price * (discount / 100);
+
+	if (discount > 0) {
+		inDiscount = true;
+	}
+
 	return (
 		<div className="news">
 			<div className="prodInfo">
@@ -8,7 +15,7 @@ export const NewsCard = () => {
 					alt=""
 				/>
 				<div className="prodData">
-					<h3 className="name">lorem ipsum dolor sit amet consecteur</h3>
+					<h3 className="name">{title}</h3>
 					<div className="rate">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -90,13 +97,13 @@ export const NewsCard = () => {
 								stroke-linejoin="round"
 							/>
 						</svg>
-						<span className="numReviews">199</span>
+						<span className="numReviews">{numReviews}</span>
 					</div>
-					<p className="id">25</p>
-					<p className="listPrice">$9999</p>
+					<p className="id">{id}</p>
+					{inDiscount && <p className="listPrice">{price}</p>}
 				</div>
 			</div>
-			<p className="price">$6900</p>
+			<p className="price">{inDiscount ? price : discountPrice}</p>
 			<div className="btn">
 				<button>
 					<svg
@@ -184,9 +191,17 @@ export const NewsCard = () => {
 	);
 };
 
-export const ProdCard = ({ isDiscount }) => {
+export const ProdCard = ({ id, title, price, discount }) => {
+	let inDiscount = false;
+	const discountPrice = price - price * (discount / 100);
+
+	if (discount > 0) {
+		inDiscount = true;
+	}
+
+	const addToCart = () => {};
 	return (
-		<div className={`product ${isDiscount && 'discount'}`}>
+		<div className={`product ${inDiscount ? 'discount' : ''}`}>
 			<div className="productInfo">
 				<div className="info">
 					<img
@@ -199,7 +214,7 @@ export const ProdCard = ({ isDiscount }) => {
 						height="137"
 						viewBox="0 0 137 137"
 						fill="none"
-						className={isDiscount && 'forSale'}
+						className={inDiscount && 'forSale'}
 					>
 						<path
 							d="M59.4394 71.1926L64.7025 71.2927L62.2494 61.9546L59.4394 71.1926Z"
@@ -210,15 +225,15 @@ export const ProdCard = ({ isDiscount }) => {
 							fill="#941B0C"
 						/>
 						<text x="45" y="75" fill="black" className="forSaleText">
-							10%
+							{`${discount}%`}
 						</text>
 					</svg>
-					<h3>Lorem ipsum dolor sit amte consecutor</h3>
-					<p className="id"> 25</p>
+					<h3>{title}</h3>
+					<p className="id"> {id}</p>
 				</div>
 			</div>
 			<div className="bottom">
-				<button className="addToCart">
+				<button className="addToCart" onClick={addToCart}>
 					<svg
 						width="24"
 						height="26"
@@ -296,8 +311,8 @@ export const ProdCard = ({ isDiscount }) => {
 					</svg>
 				</button>
 				<div className="prodPrice">
-					{isDiscount && <p className="listPrice">15000</p>}
-					<p className="price">9000</p>
+					{inDiscount && <p className="listPrice">{price}</p>}
+					<p className="price">{inDiscount ? discountPrice.toFixed(0) : price}</p>
 				</div>
 			</div>
 		</div>
