@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
+import { useCartUpdate } from '../hooks/CartContext';
 /* eslint-disable react/no-unknown-property */
-export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
+export const NewsCard = ({ props }) => {
+	const addCart = useCartUpdate();
 	let inDiscount = false;
-	const discountPrice = price - price * (discount / 100);
+	const discountPrice = props.price - props.price * (props.discount / 100);
+	const id = String(props.id).padStart(4, '0');
 
-	if (discount > 0) {
+	if (props.discount > 0) {
 		inDiscount = true;
 	}
 
@@ -15,7 +19,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 					alt=""
 				/>
 				<div className="prodData">
-					<h3 className="name">{title}</h3>
+					<h3 className="name">{props.name}</h3>
 					<div className="rate">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +30,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						>
 							<path
 								d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-								fill="#FFD100"
+								fill={props.stars >= 1 ? '#FFD100' : 'none'}
 								stroke="#FFD100"
 								stroke-width="2"
 								stroke-linecap="round"
@@ -42,7 +46,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						>
 							<path
 								d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-								fill="#FFD100"
+								fill={props.stars >= 2 ? '#FFD100' : 'none'}
 								stroke="#FFD100"
 								stroke-width="2"
 								stroke-linecap="round"
@@ -58,7 +62,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						>
 							<path
 								d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-								fill="#FFD100"
+								fill={props.stars >= 3 ? '#FFD100' : 'none'}
 								stroke="#FFD100"
 								stroke-width="2"
 								stroke-linecap="round"
@@ -74,7 +78,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						>
 							<path
 								d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-								fill="#FFD100"
+								fill={props.stars >= 4 ? '#FFD100' : 'none'}
 								stroke="#FFD100"
 								stroke-width="2"
 								stroke-linecap="round"
@@ -90,20 +94,20 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						>
 							<path
 								d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-								fill="#FFD100"
+								fill={props.stars >= 5 ? '#FFD100' : 'none'}
 								stroke="#FFD100"
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
 							/>
 						</svg>
-						<span className="numReviews">{numReviews}</span>
+						<span className="numReviews">{props.reviews}</span>
 					</div>
 					<p className="id">{id}</p>
-					{inDiscount && <p className="listPrice">{price}</p>}
+					{inDiscount && <p className="listPrice">{props.price}</p>}
 				</div>
 			</div>
-			<p className="price">{inDiscount ? price : discountPrice}</p>
+			<p className="price">{inDiscount ? props.price : discountPrice}</p>
 			<div className="btn">
 				<button>
 					<svg
@@ -155,7 +159,7 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 						</defs>
 					</svg>
 				</button>
-				<button>
+				<button onClick={addCart}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="25"
@@ -191,15 +195,16 @@ export const NewsCard = ({ title, price, id, discount, stars, numReviews }) => {
 	);
 };
 
-export const ProdCard = ({ id, title, price, discount }) => {
+export const ProdCard = ({ props }) => {
 	let inDiscount = false;
-	const discountPrice = price - price * (discount / 100);
+	const addCart = useCartUpdate();
+	const discountPrice = props.price - props.price * (props.discount / 100);
+	const id = String(props.id).padStart(4, '0');
 
-	if (discount > 0) {
+	if (props.discount > 0) {
 		inDiscount = true;
 	}
 
-	const addToCart = () => {};
 	return (
 		<div className={`product ${inDiscount ? 'discount' : ''}`}>
 			<div className="productInfo">
@@ -225,15 +230,15 @@ export const ProdCard = ({ id, title, price, discount }) => {
 							fill="#941B0C"
 						/>
 						<text x="45" y="75" fill="black" className="forSaleText">
-							{`${discount}%`}
+							{`${props.discount}%`}
 						</text>
 					</svg>
-					<h3>{title}</h3>
+					<h3>{props.name}</h3>
 					<p className="id"> {id}</p>
 				</div>
 			</div>
 			<div className="bottom">
-				<button className="addToCart" onClick={addToCart}>
+				<button className="addToCart" onClick={addCart}>
 					<svg
 						width="24"
 						height="26"
@@ -311,8 +316,8 @@ export const ProdCard = ({ id, title, price, discount }) => {
 					</svg>
 				</button>
 				<div className="prodPrice">
-					{inDiscount && <p className="listPrice">{price}</p>}
-					<p className="price">{inDiscount ? discountPrice.toFixed(0) : price}</p>
+					{inDiscount && <p className="listPrice">{props.price}</p>}
+					<p className="price">{inDiscount ? discountPrice.toFixed(0) : props.price}</p>
 				</div>
 			</div>
 		</div>
