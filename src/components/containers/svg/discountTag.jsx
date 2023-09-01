@@ -11,7 +11,7 @@ export const DiscountTag = ({ discount }) => {
 			height="137"
 			viewBox="0 0 137 137"
 			fill="none"
-			className={inDiscount && 'forSale'}
+			className={inDiscount ? 'forSale' : undefined}
 		>
 			<path
 				d="M59.4394 71.1926L64.7025 71.2927L62.2494 61.9546L59.4394 71.1926Z"
