@@ -21,35 +21,17 @@ export default function Row({ title, col, discountRow, newsRow }) {
 		productsCard = products.map((product) => {
 			if (product.discount != 0 && flag < 4) {
 				flag++;
-				return (
-					<ProdCard
-						key={product.id}
-						id={product.id}
-						title={product.name}
-						price={product.price}
-						discount={product.discount}
-					/>
-				);
+				return <ProdCard key={product.id} props={product} />;
 			}
 		});
 	} else if (newsRow) {
 		productsCard = products.map((product) => {
-			if (flag < 2) {
+			if (flag <= 3) {
 				let dateDiff = Math.abs(date - new Date(product.date.replace(/-/g, '/')));
-				console.log(dateDiff / 1000 / 60 / 60 / 24);
 				if (dateDiff / 1000 / 60 / 60 / 24 <= 7) {
 					flag++;
-					return (
-						<NewsCard
-							key={product.id}
-							id={product.id}
-							title={product.name}
-							price={product.price}
-							discount={product.discount}
-							stars={product.stars}
-							numReviews={product.reviews}
-						/>
-					);
+
+					return <NewsCard key={product.id} props={product} />;
 				}
 			}
 		});
@@ -57,15 +39,7 @@ export default function Row({ title, col, discountRow, newsRow }) {
 		productsCard = products.map((product) => {
 			flag++;
 			if (flag < 9) {
-				return (
-					<ProdCard
-						key={product.id}
-						id={product.id}
-						title={product.name}
-						price={product.price}
-						discount={product.discount}
-					/>
-				);
+				return <ProdCard key={product.id} props={product} />;
 			}
 		});
 	}
