@@ -2,7 +2,7 @@
 	{ "id": 1, "date": "1/12/2023", "name": "Toyota Camry", "price": 21277, "discount": 0 },
 	{
 		"id": 2,
-		"date": "8/25/2023",
+		"date": "8/30/2023",
 		"name": "Chevrolet Silverado",
 		"price": 44539,
 		"discount": 42,
