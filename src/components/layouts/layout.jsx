@@ -1,4 +1,4 @@
-import Logo from '../containers/logo';
+import Logo from '../containers/svg/Logo';
 import Navbar from '../containers/Navbar';
 
 export default function Layout({ children }) {
